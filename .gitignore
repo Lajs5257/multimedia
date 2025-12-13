@@ -1,0 +1,17 @@
+# Environment
+.env
+
+# Docker/compose overrides
+docker-compose.override.yml
+
+# Editor/OS
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Logs / temp
+*.log
+*.tmp
+
+# App caches (optional; configs live in /media, not tracked)
+.cache/
