@@ -10,6 +10,9 @@ services:
     volumes:
       - ./homepage:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - PUID=${PUID}
+      - PGID=${DOCKER_GID}
     env_file:
       - ./.env
 

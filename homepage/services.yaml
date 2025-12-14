@@ -5,18 +5,31 @@
         description: Torrent client
         server: docker
         container: qbittorrent
+        widget:
+          type: qbittorrent
+          url: http://qbittorrent:8080
+          username: "{{HOMEPAGE_VAR_QBITTORRENT_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}"
     - Sonarr:
         icon: sonarr.png
         href: http://localhost:8989
         description: TV series manager
         server: docker
         container: sonarr
+        widget:
+          type: sonarr
+          url: http://sonarr:8989
+          key: "{{HOMEPAGE_VAR_SONARR_API_KEY}}"
     - Radarr:
         icon: radarr.png
         href: http://localhost:7878
         description: Movies manager
         server: docker
         container: radarr
+        widget:
+          type: radarr
+          url: http://radarr:7878
+          key: "{{HOMEPAGE_VAR_RADARR_API_KEY}}"
 
 - Indexers:
     - Prowlarr:
@@ -25,6 +38,10 @@
         description: Indexer manager
         server: docker
         container: prowlarr
+        widget:
+          type: prowlarr
+          url: http://prowlarr:9696
+          key: "{{HOMEPAGE_VAR_PROWLARR_API_KEY}}"
     - Jackett:
         icon: jackett.png
         href: http://localhost:9117
@@ -39,6 +56,10 @@
         description: Media server
         server: docker
         container: jellyfin
+        widget:
+          url: http://jellyfin:8096
+          type: jellyfin
+          key: "{{HOMEPAGE_VAR_JELLYFIN_API_KEY}}"
     - Plex:
         icon: plex.png
         href: http://localhost:32400/web

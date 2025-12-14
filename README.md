@@ -8,6 +8,7 @@ Small home-media stack using linuxserver.io containers (qBittorrent, Sonarr, Rad
     - Copy `.env.example` to `.env`
     - Set `ARRPATH` (keep the trailing `/`)
     - Set `PUID`/`PGID` to match your Linux/WSL user (`id -u`, `id -g`)
+    - Set `DOCKER_GID` to match the docker group ID (`getent group docker | cut -d: -f3`)
 
 2) Start the stack:
     - `docker compose up -d`
@@ -31,6 +32,14 @@ Small home-media stack using linuxserver.io containers (qBittorrent, Sonarr, Rad
 - Radarr: <http://localhost:7878>
 - Jellyfin: <http://localhost:8096>
 - Plex (host network): <http://localhost:32400/web>
+
+## Homepage Configuration
+
+The dashboard is pre-configured with icons and widgets. To enable real-time status updates:
+
+1. Get your API Keys from each service (Settings -> General -> Security).
+2. Add your API keys to the `.env` file (see `.env.example`). Ensure they start with `HOMEPAGE_VAR_`.
+3. Restart homepage: `docker compose restart homepage`.
 
 ## Notes for WSL
 
