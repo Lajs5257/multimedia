@@ -1,4 +1,18 @@
 services:
+  # Dashboard (central hub)
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    hostname: homepage
+    restart: unless-stopped
+    ports:
+      - "3000:3000" # Web UI
+    volumes:
+      - ./homepage:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    env_file:
+      - ./.env
+
   # Download managers (Torrent)
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest

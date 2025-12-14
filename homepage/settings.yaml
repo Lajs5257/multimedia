@@ -1,0 +1,20 @@
+title: Multimedia
+language: es
+
+layout:
+  Media:
+    style: row
+    columns: 3
+  Indexers:
+    style: row
+    columns: 2
+  Streaming:
+    style: row
+    columns: 2
+  Dashboard:
+    style: row
+    columns: 2
+
+providers:
+  docker:
+    socket: /var/run/docker.sock

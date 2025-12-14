@@ -1,0 +1,55 @@
+- Media:
+    - qBittorrent:
+        icon: qbittorrent.png
+        href: http://localhost:8080
+        description: Torrent client
+        server: docker
+        container: qbittorrent
+    - Sonarr:
+        icon: sonarr.png
+        href: http://localhost:8989
+        description: TV series manager
+        server: docker
+        container: sonarr
+    - Radarr:
+        icon: radarr.png
+        href: http://localhost:7878
+        description: Movies manager
+        server: docker
+        container: radarr
+
+- Indexers:
+    - Prowlarr:
+        icon: prowlarr.png
+        href: http://localhost:9696
+        description: Indexer manager
+        server: docker
+        container: prowlarr
+    - Jackett:
+        icon: jackett.png
+        href: http://localhost:9117
+        description: Indexer proxy
+        server: docker
+        container: jackett
+
+- Streaming:
+    - Jellyfin:
+        icon: jellyfin.png
+        href: http://localhost:8096
+        description: Media server
+        server: docker
+        container: jellyfin
+    - Plex:
+        icon: plex.png
+        href: http://localhost:32400/web
+        description: Media server
+        server: docker
+        container: plex
+
+- Dashboard:
+    - Docker Compose:
+        icon: homepage.png
+        href: http://localhost:3000
+        description: Homepage
+        server: docker
+        container: homepage

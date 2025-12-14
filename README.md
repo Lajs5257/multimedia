@@ -23,6 +23,7 @@ Small home-media stack using linuxserver.io containers (qBittorrent, Sonarr, Rad
 
 ## Services / URLs
 
+- Homepage (dashboard): <http://localhost:3000>
 - qBittorrent: <http://localhost:8080>
 - Prowlarr: <http://localhost:9696>
 - Jackett: <http://localhost:9117>
