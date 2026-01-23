@@ -30,6 +30,16 @@
           type: radarr
           url: http://radarr:7878
           key: "{{HOMEPAGE_VAR_RADARR_API_KEY}}"
+    - Jellyseerr:
+        icon: jellyseerr.png
+        href: http://localhost:5055
+        description: Request manager
+        server: docker
+        container: jellyseerr
+        widget:
+          type: jellyseerr
+          url: http://jellyseerr:5055
+          key: "{{HOMEPAGE_VAR_JELLYSEERR_API_KEY}}"
 
 - Indexers:
     - Prowlarr:

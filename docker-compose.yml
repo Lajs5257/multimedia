@@ -92,6 +92,18 @@ services:
     env_file:
       - ./.env
 
+  jellyseerr:
+    image: ghcr.io/fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    hostname: jellyseerr
+    restart: unless-stopped
+    volumes:
+      - ${ARRPATH}jellyseerr/config:/config
+    ports:
+      - "5055:5055"
+    env_file:
+      - ./.env
+
   # Media streaming servers
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
