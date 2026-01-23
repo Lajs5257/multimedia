@@ -110,14 +110,17 @@ services:
     container_name: jellyfin
     hostname: jellyfin
     restart: unless-stopped
+    gpus: all # Enable GPU acceleration if available
     volumes:
       - ${ARRPATH}jellyfin/config:/config
-      - ${ARRPATH}radarr/movies:/data/movies
-      - ${ARRPATH}sonarr/tvshows:/data/tvshows
+      - ${ARRPATH}:/data
     ports:
       - "8096:8096/tcp" # Web UI
       - "7359:7359/udp" # Auto-discovery
       - "1900:1900/udp" # DLNA/UPnP
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,video,utility
     env_file:
       - ./.env
 
