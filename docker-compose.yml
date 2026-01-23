@@ -24,7 +24,7 @@ services:
     restart: unless-stopped
     volumes:
       - ${ARRPATH}qbittorrent/config:/config
-      - ${ARRPATH}downloads:/downloads
+      - ${ARRPATH}:/data
     ports:
       - "8080:8080" # Web UI
       - "6881:6881" # TCP port for torrents
@@ -71,9 +71,8 @@ services:
     restart: unless-stopped
     volumes:
       - ${ARRPATH}sonarr/config:/config
-      - ${ARRPATH}sonarr/backup:/data/backup
-      - ${ARRPATH}sonarr/tvshows:/data/tvshows
-      - ${ARRPATH}downloads:/downloads
+      - ${ARRPATH}sonarr/backup:/backup
+      - ${ARRPATH}:/data
     ports:
       - "8989:8989" # Web UI
     env_file:
@@ -86,9 +85,8 @@ services:
     restart: unless-stopped
     volumes:
       - ${ARRPATH}radarr/config:/config
-      - ${ARRPATH}radarr/movies:/data/movies
-      - ${ARRPATH}radarr/backup:/data/backup
-      - ${ARRPATH}downloads:/downloads
+      - ${ARRPATH}radarr/backup:/backup
+      - ${ARRPATH}:/data
     ports:
       - "7878:7878" # Web UI
     env_file:
