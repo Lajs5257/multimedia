@@ -93,7 +93,7 @@ services:
       - ./.env
 
   jellyseerr:
-    image: ghcr.io/fallenbagel/jellyseerr:latest
+    image: ghcr.io/seerr-team/seerr:latest
     container_name: jellyseerr
     hostname: jellyseerr
     restart: unless-stopped
